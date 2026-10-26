@@ -7,22 +7,7 @@ import { Navbar, type NavLinkItem } from '@/components/ui/navbar';
 import { createClient } from '@/lib/supabase/client';
 import type { TeacherSession, TeacherRole } from '@/types/models';
 import { Loader2 } from 'lucide-react';
-
-interface TeacherContextType {
-  teacher: TeacherSession | null;
-  isLoading: boolean;
-  refreshTeacher: () => Promise<void>;
-  logout: () => Promise<void>;
-}
-
-export const TeacherContext = React.createContext<TeacherContextType>({
-  teacher: null,
-  isLoading: true,
-  refreshTeacher: async () => {},
-  logout: async () => {},
-});
-
-export const useTeacher = () => React.useContext(TeacherContext);
+import { TeacherContext } from '@/context/teacher-context';
 
 const ROLE_LABELS: Record<TeacherRole, string> = {
   homeroom: '담임 교사',

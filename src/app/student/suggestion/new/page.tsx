@@ -3,7 +3,7 @@
 // src/app/student/suggestion/new/page.tsx
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
-import { useStudent } from '@/app/student/layout';
+import { useStudent } from '@/context/student-context';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';

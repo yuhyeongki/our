@@ -2,32 +2,44 @@
 import * as React from 'react';
 import { cn } from '@/lib/utils';
 
+export type BadgeVariant =
+  | 'default'
+  | 'pending'
+  | 'accepted'
+  | 'completed'
+  | 'cancelled'
+  | 'received'
+  | 'in_progress'
+  | 'reviewed'
+  | 'resolved'
+  | 'dismissed'
+  | 'anonymous'
+  | 'named'
+  | 'urgent'
+  | 'category'
+  | 'sage'
+  | 'honey'
+  | 'blush'
+  | 'mist';
+
 export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?:
-    | 'default'
-    | 'pending'
-    | 'accepted'
-    | 'completed'
-    | 'cancelled'
-    | 'anonymous'
-    | 'named'
-    | 'urgent'
-    | 'category'
-    | 'sage'
-    | 'honey'
-    | 'blush'
-    | 'mist';
+  variant?: BadgeVariant;
   size?: 'sm' | 'md';
 }
 
 export const Badge = React.forwardRef<HTMLSpanElement, BadgeProps>(
   ({ className, variant = 'default', size = 'md', ...props }, ref) => {
-    const variants = {
+    const variants: Record<BadgeVariant, string> = {
       default: 'bg-warm-100 text-warm-800 border-warm-200',
       pending: 'bg-honey-100 text-honey-800 border-honey-200 font-medium',
       accepted: 'bg-sage-100 text-sage-800 border-sage-200 font-medium',
       completed: 'bg-warm-200/80 text-warm-700 border-warm-300 font-medium',
       cancelled: 'bg-warm-100 text-warm-500 border-warm-200 line-through',
+      received: 'bg-honey-100 text-honey-800 border-honey-200 font-medium',
+      in_progress: 'bg-sage-100 text-sage-800 border-sage-200 font-medium',
+      reviewed: 'bg-mist-100 text-mist-700 border-mist-200 font-medium',
+      resolved: 'bg-sage-200/90 text-sage-800 border-sage-300 font-medium',
+      dismissed: 'bg-warm-100 text-warm-500 border-warm-200 font-medium',
       anonymous: 'bg-mist-100 text-mist-700 border-mist-200 font-medium',
       named: 'bg-blush-100 text-blush-800 border-blush-200 font-medium',
       urgent:

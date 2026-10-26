@@ -75,11 +75,11 @@ Every feature from the survey phase is inventoried below with its assigned miles
 | # | Name | Scope | Dependencies | Status |
 |---|------|-------|-------------|--------|
 | M1 | Database & Security Foundation | `supabase/schema.sql`, RLS policies, trigger-based anonymity enforcement, `.env.local.example` | none | DONE (Verified: 2 APPROVE, 2 CHALLENGE APPROVE, 1 AUDIT CLEAN) |
-| M2 | Project Scaffold & Pastel UI System | Next.js 14/15 App Router setup, TypeScript, Tailwind config with pastel palette, shared UI components | M1 | PLANNED |
-| M3 | Student Authentication & Core Features | PIN login/registration, stateless JWT cookie session, 1:1 counseling form, suggestion box with anonymity toggle, "My Applications" view | M2 | PLANNED |
-| M4 | Teacher Portal & Management Dashboard | Supabase Auth login, Edge middleware `/teacher/*` route guard, live filtered view of counseling requests and suggestions, detail modal, notes, PIN reset | M2, M3 | PLANNED |
+| M2 | Project Scaffold & Pastel UI System | Next.js 14/15 App Router setup, TypeScript, Tailwind config with pastel palette, shared UI components | M1 | DONE (Verified: 2 APPROVE, 2 CHALLENGE APPROVE, 1 AUDIT CLEAN) |
+| M3 | Student Authentication & Core Features | PIN login/registration, stateless JWT cookie session, 1:1 counseling form, suggestion box with anonymity toggle, "My Applications" view | M2 | DONE (Verified: 2 APPROVE, 2 CHALLENGE APPROVE, 1 AUDIT CLEAN) |
+| M4 | Teacher Portal & Management Dashboard | Supabase Auth login, Edge middleware `/teacher/*` route guard, live filtered view of counseling requests and suggestions, detail modal, notes, PIN reset | M2, M3 | DONE (Verified: 2 APPROVE, 2 CHALLENGE APPROVE, 1 AUDIT CLEAN) |
 | M5 | E2E Testing Track | Independent requirement-driven test suite (Tiers 1-4), automated runner, test cases, published `TEST_READY.md` (60/60 tests pass) | M1 | DONE |
-| M6 | Final Integration & Verification | Run full E2E test suite, adversarial coverage hardening (Tier 5), `npm run build`, type check, forensic audit, README.md | M3, M4, M5 | PLANNED |
+| M6 | Final Integration & Verification | Run full E2E test suite, adversarial coverage hardening (Tier 5), build & type check, forensic audit, README.md | M3, M4, M5 | DONE (Verified: 2 APPROVE, 2 CHALLENGE APPROVE, 1 AUDIT CLEAN) |
 
 
 ---

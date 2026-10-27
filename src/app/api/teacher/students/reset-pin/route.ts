@@ -4,6 +4,8 @@ import bcrypt from 'bcryptjs';
 import { supabaseAdmin } from '@/lib/supabase/admin';
 import { getTeacherSession } from '@/lib/auth/teacher';
 
+export const dynamic = 'force-dynamic';
+
 /**
  * GET: List all students for teacher PIN reset roster view
  */

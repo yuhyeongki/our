@@ -21,7 +21,7 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 
-export default function TeacherLoginPage() {
+function TeacherLoginContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectPath = searchParams?.get('redirect') || '/teacher/dashboard';
@@ -218,5 +218,13 @@ export default function TeacherLoginPage() {
         © 2026 김해영운고등학교 · 교사용 관리 대시보드
       </footer>
     </div>
+  );
+}
+
+export default function TeacherLoginPage() {
+  return (
+    <React.Suspense fallback={<div className="min-h-screen bg-warm-50" />}>
+      <TeacherLoginContent />
+    </React.Suspense>
   );
 }

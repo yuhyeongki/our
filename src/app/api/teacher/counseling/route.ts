@@ -41,7 +41,17 @@ export async function GET(req: NextRequest) {
       .from('students')
       .select('id, grade, class_number, student_number, name');
 
-    const studentMap = new Map((students || []).map((s: any) => [s.id, s]));
+    interface StudentItem {
+      id: string;
+      grade: number;
+      class_number: number;
+      student_number: number;
+      name: string;
+    }
+
+    const studentMap = new Map<string, StudentItem>(
+      ((students as any[]) || []).map((s: any) => [s.id, s as StudentItem])
+    );
 
     // 5. Apply filters and map results
     const results: any[] = [];
